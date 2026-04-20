@@ -164,8 +164,7 @@ body {
     border: none;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
     gap: 1.2rem;
     position: relative;
     overflow: hidden;
@@ -499,7 +498,6 @@ footer {
     .why-layout {
         grid-template-columns: 1fr;
         gap: 60px;
-        text-align: center;
     }
 
     .quote-mark {
@@ -611,7 +609,26 @@ footer {
 }
 
 /* =============================================
-   RESPONSIVIDADE MOBILE
+   RESPONSIVIDADE TABLET (968px - 768px)
+   ============================================= */
+@media (max-width: 968px) {
+    .hero-hotspot {
+        left: 20%;
+        top: 55%;
+        padding: 0.9rem 2rem;
+        font-size: 0.95rem;
+    }
+
+    .offer-hotspot {
+        left: 2%;
+        top: 42%;
+        padding: 0.9rem 2rem;
+        font-size: 0.95rem;
+    }
+}
+
+/* =============================================
+   RESPONSIVIDADE MOBILE (768px e abaixo)
    ============================================= */
 @media (max-width: 768px) {
 
@@ -624,24 +641,20 @@ footer {
 
     /* Hero */
     .hero {
-        height: 56.25vw; /* Mantém a proporção 16:9 da imagem para exibi-la toda */
-        background-size: cover;
-        background-position: center top;
-        display: block; /* remove o flex */
-        padding-bottom: 0;
-        min-height: auto;
+        background-position: 70% center;
+        height: 100svh;
     }
+    
+    /* Hero Hotspot - Centralizado e sobreposto */
     .hero-hotspot {
         position: absolute;
-        left: 25.3%;
-        top: 57%;
-        width: auto;
-        max-width: none;
-        font-size: 1.8vw;
-        padding: 1.2vw 2.5vw;
-        letter-spacing: 0.2vw;
-        border-radius: 1vw;
-        transform: none;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 0.85rem;
+        padding: 0.8rem 1.5rem;
+        letter-spacing: 1.5px;
+        white-space: nowrap;
     }
 
     /* Sections padding */
@@ -668,23 +681,17 @@ footer {
     .why-grid { grid-template-columns: 1fr; gap: 1.5rem; }
     .why-image img { width: 100%; }
 
-    /* Offer */
-    .offer-container-relative {
-        display: block; /* revert flex */
-        padding-bottom: 0;
-    }
+    /* Offer Hotspot - Centralizado e sobreposto */
     .offer-hotspot {
         position: absolute;
-        left: 1%;
-        top: 43%;
-        width: auto;
-        max-width: none;
-        margin-top: 0;
-        font-size: 2.2vw;
-        padding: 1.5vw 2vw;
-        letter-spacing: 0.1vw;
-        border-radius: 1vw;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 0.75rem;
+        padding: 0.7rem 1.2rem;
+        letter-spacing: 0.5px;
         white-space: nowrap;
+        border-radius: 8px;
     }
 
     /* Footer */
@@ -693,10 +700,51 @@ footer {
     .logo { font-size: 1.1rem; }
 }
 
+/* =============================================
+   RESPONSIVIDADE MOBILE PEQUENO (480px e abaixo)
+   ============================================= */
 @media (max-width: 480px) {
     .section-title { font-size: 1.5rem; }
+    
+    .hero-hotspot { 
+        font-size: 0.7rem; 
+        padding: 0.6rem 1rem; 
+        letter-spacing: 0.8px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
     .problem-card { padding: 30px 20px; }
     .quote-area p { font-size: 1.2rem; }
     .benefit-title { font-size: 1.4rem; }
     .why-title { font-size: 1.3rem; }
+    
+    .offer-hotspot { 
+        font-size: 0.65rem; 
+        padding: 0.5rem 0.8rem;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* =============================================
+   RESPONSIVIDADE MOBILE EXTRA PEQUENO (360px e abaixo)
+   ============================================= */
+@media (max-width: 360px) {
+    .hero-hotspot {
+        font-size: 0.65rem;
+        padding: 0.5rem 0.8rem;
+        letter-spacing: 0.5px;
+    }
+    
+    .offer-hotspot {
+        font-size: 0.6rem;
+        padding: 0.4rem 0.6rem;
+    }
+    
+    .section-title { font-size: 1.3rem; }
+    .benefit-title { font-size: 1.2rem; }
+    .why-title { font-size: 1.1rem; }
 }
