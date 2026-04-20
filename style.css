@@ -624,29 +624,24 @@ footer {
 
     /* Hero */
     .hero {
-        background-size: contain;
+        height: 56.25vw; /* Mantém a proporção 16:9 da imagem para exibi-la toda */
+        background-size: cover;
         background-position: center top;
-        background-color: transparent;
-        height: auto;
-        min-height: 55svh;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        align-items: center;
-        padding-bottom: 2rem;
+        display: block; /* remove o flex */
+        padding-bottom: 0;
+        min-height: auto;
     }
     .hero-hotspot {
-        position: relative;
-        left: auto;
-        top: auto;
-        width: 85%;
-        max-width: 350px;
-        justify-content: center;
-        font-size: 0.95rem;
-        padding: 1.2rem;
-        letter-spacing: 1.5px;
-        text-align: center;
-        border-radius: 12px;
+        position: absolute;
+        left: 25.3%;
+        top: 57%;
+        width: auto;
+        max-width: none;
+        font-size: 1.8vw;
+        padding: 1.2vw 2.5vw;
+        letter-spacing: 0.2vw;
+        border-radius: 1vw;
+        transform: none;
     }
 
     /* Sections padding */
@@ -675,23 +670,20 @@ footer {
 
     /* Offer */
     .offer-container-relative {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        display: block; /* revert flex */
+        padding-bottom: 0;
     }
     .offer-hotspot {
-        position: relative;
-        left: auto;
-        top: auto;
-        width: 85%;
-        max-width: 350px;
-        margin-top: 2rem;
-        justify-content: center;
-        font-size: 0.95rem;
-        padding: 1.2rem;
-        letter-spacing: 1.5px;
-        text-align: center;
-        border-radius: 12px;
+        position: absolute;
+        left: 1%;
+        top: 43%;
+        width: auto;
+        max-width: none;
+        margin-top: 0;
+        font-size: 2.2vw;
+        padding: 1.5vw 2vw;
+        letter-spacing: 0.1vw;
+        border-radius: 1vw;
         white-space: nowrap;
     }
 
@@ -703,10 +695,8 @@ footer {
 
 @media (max-width: 480px) {
     .section-title { font-size: 1.5rem; }
-    .hero-hotspot { font-size: 0.85rem; padding: 1rem; letter-spacing: 1px; }
     .problem-card { padding: 30px 20px; }
     .quote-area p { font-size: 1.2rem; }
     .benefit-title { font-size: 1.4rem; }
     .why-title { font-size: 1.3rem; }
-    .offer-hotspot { font-size: 0.85rem; padding: 1rem; white-space: normal; }
 }
