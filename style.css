@@ -674,9 +674,9 @@ footer {
     .hero {
         position: relative;
         height: 76vw;
-        /* Zoom 135%: 56.25vw * 1.35 */
-        background-size: 135% auto;
-        background-position: center top;
+        /* Zoom 175%: mais recortado, foca na área principal */
+        background-size: 175% auto;
+        background-position: center 10%;
         display: block;
         padding-bottom: 0;
         min-height: auto;
@@ -686,14 +686,12 @@ footer {
 
     .hero-hotspot {
         position: absolute;
-        left: 17%;
-        /* Axis corrected */
-        top: 45.5%;
-        /* Axis corrected */
-        width: 24.5%;
+        left: 6%;
+        top: 61.2%;
+        width: 32.7%;
         max-width: none;
-        height: 7.5%;
-        font-size: 1.4vw;
+        height: 8.5%;
+        font-size: 1.5vw;
         padding: 0;
         display: flex;
         align-items: center;
@@ -714,6 +712,14 @@ footer {
     .modules,
     .offer {
         padding: 60px 0;
+    }
+
+    .modules-intro img {
+        width: 105%;
+        /* Levemente maior que o container */
+        margin-left: -2.5%;
+        /* Centraliza o excesso */
+        max-width: none;
     }
 
     .offer .container {
@@ -801,8 +807,8 @@ footer {
 
     .offer-hotspot {
         position: absolute;
-        left: 3%;
-        top: 41.5%;
+        left: 2.6%;
+        top: 42.2%;
         width: 36.8%;
         /* 32% * 1.15 */
         max-width: none;
