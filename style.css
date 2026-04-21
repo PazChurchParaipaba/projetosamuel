@@ -179,11 +179,12 @@ body {
     left: -60%;
     width: 80%;
     height: 180%;
-    background: rgba(255,255,255,0.08);
+    background: rgba(255, 255, 255, 0.08);
     transform: rotate(25deg);
     transition: left 0.5s ease;
     pointer-events: none;
 }
+
 .problem-card:hover::after {
     left: 120%;
 }
@@ -220,7 +221,7 @@ body {
 }
 
 .problem-card p {
-    color: rgba(255,255,255,0.9);
+    color: rgba(255, 255, 255, 0.9);
     font-size: 0.95rem;
     line-height: 1.5;
 }
@@ -236,6 +237,7 @@ body {
     line-height: 1.6;
     text-transform: uppercase;
 }
+
 .highlight-text strong {
     color: var(--accent-blue);
     font-weight: 950;
@@ -530,32 +532,49 @@ footer {
     transform: translateY(40px);
     transition: opacity 0.7s ease, transform 0.7s ease;
 }
+
 .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
 }
+
 .fade-in-left {
     opacity: 0;
     transform: translateX(-50px);
     transition: opacity 0.7s ease, transform 0.7s ease;
 }
+
 .fade-in-left.visible {
     opacity: 1;
     transform: translateX(0);
 }
+
 .fade-in-right {
     opacity: 0;
     transform: translateX(50px);
     transition: opacity 0.7s ease, transform 0.7s ease;
 }
+
 .fade-in-right.visible {
     opacity: 1;
     transform: translateX(0);
 }
-.fade-in-delay-1 { transition-delay: 0.1s; }
-.fade-in-delay-2 { transition-delay: 0.2s; }
-.fade-in-delay-3 { transition-delay: 0.3s; }
-.fade-in-delay-4 { transition-delay: 0.4s; }
+
+.fade-in-delay-1 {
+    transition-delay: 0.1s;
+}
+
+.fade-in-delay-2 {
+    transition-delay: 0.2s;
+}
+
+.fade-in-delay-3 {
+    transition-delay: 0.3s;
+}
+
+.fade-in-delay-4 {
+    transition-delay: 0.4s;
+}
 
 /* =============================================
    HOVER E MICRO-ANIMAÇÕES
@@ -568,6 +587,7 @@ footer {
 .problem-card {
     transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
+
 .problem-card:hover {
     transform: translateY(-8px);
     border-color: var(--accent-blue);
@@ -577,6 +597,7 @@ footer {
 .benefit-item {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .benefit-item:hover {
     transform: translateX(6px);
     box-shadow: -4px 0 20px rgba(0, 86, 255, 0.2);
@@ -585,12 +606,15 @@ footer {
 .why-item-small {
     transition: transform 0.3s ease;
 }
+
 .why-item-small:hover {
     transform: translateY(-4px);
 }
+
 .why-item-small i {
     transition: background 0.3s ease, box-shadow 0.3s ease;
 }
+
 .why-item-small:hover i {
     background: rgba(0, 86, 255, 0.25);
     box-shadow: 0 0 15px rgba(0, 86, 255, 0.3);
@@ -598,10 +622,19 @@ footer {
 
 /* Pulsação nos botões CTA */
 @keyframes pulse-glow {
-    0%, 100% { box-shadow: 0 0 25px rgba(0, 86, 255, 0.5); }
-    50%       { box-shadow: 0 0 45px rgba(0, 86, 255, 0.85); }
+
+    0%,
+    100% {
+        box-shadow: 0 0 25px rgba(0, 86, 255, 0.5);
+    }
+
+    50% {
+        box-shadow: 0 0 45px rgba(0, 86, 255, 0.85);
+    }
 }
-.hero-hotspot, .offer-hotspot {
+
+.hero-hotspot,
+.offer-hotspot {
     animation: pulse-glow 2.5s ease-in-out infinite;
 }
 
@@ -627,79 +660,159 @@ footer {
         align-items: center;
         width: 100%;
     }
-    .logo { font-size: 1rem; }
-    .cta-nav { font-size: 0.75rem; padding: 0.6rem 1rem; }
+
+    .logo {
+        font-size: 1rem;
+    }
+
+    .cta-nav {
+        font-size: 0.75rem;
+        padding: 0.6rem 1rem;
+    }
 
     /* Hero */
     .hero {
         position: relative;
-        height: 56.25vw; /* Mantém a proporção 16:9 da imagem para exibi-la toda */
-        background-size: 100% 100%; /* Force perfectly map the image */
+        height: 76vw;
+        /* Zoom 135%: 56.25vw * 1.35 */
+        background-size: 135% auto;
         background-position: center top;
-        display: block; /* remove o flex */
+        display: block;
         padding-bottom: 0;
         min-height: auto;
         border-bottom: 2px solid var(--accent-blue);
+        overflow: hidden;
     }
+
     .hero-hotspot {
         position: absolute;
-        left: 20.8%; /* Math precision offset */
-        top: 54.8%; /* Math precision offset */
-        width: 22.8%; /* Fixed width to exactly match the baked button */
+        left: 17%;
+        /* Axis corrected */
+        top: 45.5%;
+        /* Axis corrected */
+        width: 24.5%;
         max-width: none;
-        height: 8.5%; /* Precision calculated height (approx 24px of 281px) */
-        font-size: 1.3vw; /* Perfect match for 6.5px at 500width */
-        padding: 0; 
+        height: 7.5%;
+        font-size: 1.4vw;
+        padding: 0;
         display: flex;
         align-items: center;
         justify-content: center;
         letter-spacing: 0;
-        border-radius: 2vw; /* Match baked border radius */
+        border-radius: 2vw;
         transform: none;
+        white-space: nowrap;
     }
 
     /* Sections padding */
-    .problems, .benefits, .why-us { padding: 80px 0; }
-    .modules, .offer { padding: 60px 0; }
+    .problems,
+    .benefits,
+    .why-us {
+        padding: 80px 0;
+    }
 
-    .section-title { font-size: 1.8rem; letter-spacing: -1px; margin-bottom: 50px; }
+    .modules,
+    .offer {
+        padding: 60px 0;
+    }
+
+    .offer .container {
+        padding: 0 10px;
+        /* Reduz o padding para aumentar a área */
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+        letter-spacing: -1px;
+        margin-bottom: 50px;
+    }
 
     /* Problems */
-    .problem-grid { grid-template-columns: 1fr; }
-    .problem-card { padding: 40px 28px; }
+    .problem-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .problem-card {
+        padding: 40px 28px;
+    }
 
     /* Highlight text */
-    .highlight-text { font-size: 1.1rem; }
+    .highlight-text {
+        font-size: 1.1rem;
+    }
 
     /* Benefits */
-    .benefits-layout { grid-template-columns: 1fr; gap: 40px; text-align: center; }
-    .quote-area p { font-size: 1.5rem; }
-    .benefit-title { font-size: 1.8rem; }
+    .benefits-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .quote-area p {
+        font-size: 1.5rem;
+    }
+
+    .benefit-title {
+        font-size: 1.8rem;
+    }
 
     /* Why Us */
-    .why-layout { grid-template-columns: 1fr; gap: 40px; }
-    .why-title { font-size: 1.6rem; }
-    .why-grid { grid-template-columns: 1fr; gap: 1.5rem; }
-    .why-image img { width: 100%; }
+    .why-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .why-title {
+        font-size: 1.6rem;
+    }
+
+    .why-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .why-item-small {
+        align-items: center;
+    }
+
+    .why-image img {
+        width: 100%;
+    }
 
     /* Offer */
     .offer-container-relative {
-        display: block; /* revert flex */
+        display: block;
+        /* revert flex */
         padding-bottom: 0;
         container-type: inline-size;
+        overflow: hidden;
+        border-radius: 12px;
     }
+
+    .full-offer-img {
+        width: 115%;
+        /* Diminui o corte para 15% apenas à direita */
+        margin-left: 0;
+        /* Garante que o texto BÔNUS na esquerda não seja cortado */
+        height: auto;
+        display: block;
+        max-width: none;
+    }
+
     .offer-hotspot {
         position: absolute;
-        left: 0.8%; /* Adjusted to be perfectly aligned with the card's edge */
+        left: 3%;
         top: 41.5%;
-        width: 32%; /* Matches the card column */
+        width: 36.8%;
+        /* 32% * 1.15 */
         max-width: none;
         margin-top: 0;
-        font-size: 1.7cqw; /* Slightly tweaked text down to fit beautifully */
-        padding: 1.2cqw 1cqw;
+        font-size: 1.9cqw;
+        /* 1.7 * 1.15 = 1.955 */
+        padding: 1.3cqw 1cqw;
         letter-spacing: 0.05cqw;
-        border-radius: 1.2cqw;
-        white-space: normal; /* Allow wrap if needed on very small screens */
+        border-radius: 1.3cqw;
+        white-space: normal;
         text-align: center;
         display: flex;
         justify-content: center;
@@ -708,15 +821,39 @@ footer {
     }
 
     /* Footer */
-    footer { padding: 3rem 0; }
-    .footer-layout { flex-direction: column; text-align: center; gap: 1.5rem; }
-    .logo { font-size: 1.1rem; }
+    footer {
+        padding: 3rem 0;
+    }
+
+    .footer-layout {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    .logo {
+        font-size: 1.1rem;
+    }
 }
 
 @media (max-width: 480px) {
-    .section-title { font-size: 1.5rem; }
-    .problem-card { padding: 30px 20px; }
-    .quote-area p { font-size: 1.2rem; }
-    .benefit-title { font-size: 1.4rem; }
-    .why-title { font-size: 1.3rem; }
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .problem-card {
+        padding: 30px 20px;
+    }
+
+    .quote-area p {
+        font-size: 1.2rem;
+    }
+
+    .benefit-title {
+        font-size: 1.4rem;
+    }
+
+    .why-title {
+        font-size: 1.3rem;
+    }
 }
