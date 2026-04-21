@@ -329,7 +329,7 @@ body {
 }
 
 .modules-intro img {
-    width: 107%;
+    width: 100%;
     max-width: 1000px;
     border-radius: 20px;
     filter: drop-shadow(0 20px 60px rgba(0, 86, 255, 0.2));
@@ -673,9 +673,9 @@ footer {
     /* Hero - mantém proporção exata da imagem do layout */
     .hero {
         height: 0;
-        padding-bottom: 56.25%;
+        padding-bottom: 57.25%;
         /* Proporção 16:9 exata da imagem layout_full.png */
-        background-size: 100% 100%;
+        background-size: 150% 100%;
         background-position: center top;
         display: block;
         position: relative;
