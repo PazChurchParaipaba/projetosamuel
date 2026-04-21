@@ -617,30 +617,44 @@ footer {
 
     /* Navbar */
     .navbar {
+        position: relative;
+        left: 0;
+        transform: none;
         padding: 1rem 1.5rem;
+        background: #000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
     }
     .logo { font-size: 1rem; }
     .cta-nav { font-size: 0.75rem; padding: 0.6rem 1rem; }
 
     /* Hero */
     .hero {
+        position: relative;
         height: 56.25vw; /* Mantém a proporção 16:9 da imagem para exibi-la toda */
-        background-size: cover;
+        background-size: 100% 100%; /* Force perfectly map the image */
         background-position: center top;
         display: block; /* remove o flex */
         padding-bottom: 0;
         min-height: auto;
+        border-bottom: 2px solid var(--accent-blue);
     }
     .hero-hotspot {
         position: absolute;
-        left: 25.3%;
-        top: 57%;
-        width: auto;
+        left: 20.8%; /* Math precision offset */
+        top: 54.8%; /* Math precision offset */
+        width: 22.8%; /* Fixed width to exactly match the baked button */
         max-width: none;
-        font-size: 1.8vw;
-        padding: 1.2vw 2.5vw;
-        letter-spacing: 0.2vw;
-        border-radius: 1vw;
+        height: 8.5%; /* Precision calculated height (approx 24px of 281px) */
+        font-size: 1.3vw; /* Perfect match for 6.5px at 500width */
+        padding: 0; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        letter-spacing: 0;
+        border-radius: 2vw; /* Match baked border radius */
         transform: none;
     }
 
@@ -672,19 +686,25 @@ footer {
     .offer-container-relative {
         display: block; /* revert flex */
         padding-bottom: 0;
+        container-type: inline-size;
     }
     .offer-hotspot {
         position: absolute;
-        left: 1%;
-        top: 43%;
-        width: auto;
+        left: 0.8%; /* Adjusted to be perfectly aligned with the card's edge */
+        top: 41.5%;
+        width: 32%; /* Matches the card column */
         max-width: none;
         margin-top: 0;
-        font-size: 2.2vw;
-        padding: 1.5vw 2vw;
-        letter-spacing: 0.1vw;
-        border-radius: 1vw;
-        white-space: nowrap;
+        font-size: 1.7cqw; /* Slightly tweaked text down to fit beautifully */
+        padding: 1.2cqw 1cqw;
+        letter-spacing: 0.05cqw;
+        border-radius: 1.2cqw;
+        white-space: normal; /* Allow wrap if needed on very small screens */
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        line-height: 1.2;
     }
 
     /* Footer */
