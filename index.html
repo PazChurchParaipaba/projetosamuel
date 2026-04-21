@@ -1,722 +1,200 @@
-:root {
-    --bg-dark: #050505;
-    --accent-blue: #0056FF;
-    --accent-blue-glow: rgba(0, 86, 255, 0.4);
-    --text-white: #FFFFFF;
-    --text-dim: #A0A0A0;
-    --card-border: rgba(255, 255, 255, 0.08);
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    background-color: var(--bg-dark);
-    color: var(--text-white);
-    font-family: 'Inter', sans-serif;
-    line-height: 1.5;
-    overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    position: relative;
-}
-
-/* Navbar */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 2rem;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    max-width: 100%;
-    padding: 1.5rem 3rem;
-    z-index: 100;
-}
-
-.logo {
-    font-weight: 850;
-    font-size: 1.2rem;
-    letter-spacing: -1px;
-}
-
-.logo span {
-    color: var(--accent-blue);
-}
-
-.cta-nav {
-    background: var(--accent-blue);
-    color: #FFF;
-    text-decoration: none;
-    padding: 0.8rem 1.6rem;
-    border-radius: 6px;
-    font-weight: 800;
-    font-size: 0.85rem;
-    transition: transform 0.3s;
-}
-
-/* Hero Section */
-.hero {
-    height: 100vh;
-    width: 100%;
-    background: url('img/layout_full.png') center center / cover no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    border-bottom: 2px solid var(--accent-blue);
-}
-
-.hero-hotspot {
-    position: absolute;
-    left: 25.3%;
-    top: 57%;
-    background: #0056FF;
-    color: white;
-    text-decoration: none;
-    padding: 1rem 2.5rem;
-    font-size: 1.05rem;
-    font-weight: 950;
-    letter-spacing: 3px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    cursor: pointer;
-    transition: all 0.3s;
-    z-index: 10;
-    box-shadow: 0 0 25px rgba(0, 86, 255, 0.5);
-    text-transform: uppercase;
-}
-
-.hero-hotspot:hover {
-    transform: scale(1.03);
-    box-shadow: 0 0 40px rgba(0, 86, 255, 0.7);
-}
-
-/* Ticker */
-.ticker-wrap {
-    background: #000;
-    border-top: 1px solid #111;
-    border-bottom: 1px solid #111;
-    padding: 20px 0;
-    overflow: hidden;
-}
-
-.ticker {
-    white-space: nowrap;
-    animation: ticker 40s linear infinite;
-    display: inline-block;
-}
-
-.ticker span {
-    font-size: 1.1rem;
-    font-weight: 900;
-    color: #111;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-@keyframes ticker {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(-50%);
-    }
-}
-
-/* Problems Section */
-.problems {
-    padding: 120px 0;
-}
-
-.section-title {
-    text-align: center;
-    font-size: 2.8rem;
-    font-weight: 950;
-    margin-bottom: 80px;
-    letter-spacing: -2px;
-}
-
-.problem-grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 1.5rem;
-}
-
-.problem-card {
-    background: var(--accent-blue);
-    padding: 36px 28px;
-    border-radius: 20px;
-    border: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 1.2rem;
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.problem-card::after {
-    content: '';
-    position: absolute;
-    top: -60%;
-    left: -60%;
-    width: 80%;
-    height: 180%;
-    background: rgba(255,255,255,0.08);
-    transform: rotate(25deg);
-    transition: left 0.5s ease;
-    pointer-events: none;
-}
-.problem-card:hover::after {
-    left: 120%;
-}
-
-.problem-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 20px 60px rgba(0, 86, 255, 0.5);
-}
-
-.card-icon-box {
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 16px;
-    width: 70px;
-    height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 0.5rem;
-}
-
-.card-icon-box i {
-    font-size: 2rem;
-    color: #FFF;
-}
-
-.problem-card h3 {
-    font-size: 1.1rem;
-    font-weight: 950;
-    color: #FFF;
-    text-transform: uppercase;
-    line-height: 1.3;
-    margin-bottom: 0;
-    font-style: italic;
-}
-
-.problem-card p {
-    color: rgba(255,255,255,0.9);
-    font-size: 0.95rem;
-    line-height: 1.5;
-}
-
-.highlight-text {
-    text-align: center;
-    font-size: 1.3rem;
-    font-weight: 700;
-    margin-top: 70px;
-    color: #FFF;
-    letter-spacing: 0.5px;
-    background: transparent !important;
-    line-height: 1.6;
-    text-transform: uppercase;
-}
-.highlight-text strong {
-    color: var(--accent-blue);
-    font-weight: 950;
-}
-
-/* Benefits Section (Novo) */
-.benefits {
-    padding: 120px 0;
-    background-color: #000;
-}
-
-.benefits-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
-}
-
-.quote-area {
-    position: relative;
-    padding-left: 4rem;
-}
-
-.quote-mark {
-    font-size: 15rem;
-    color: var(--accent-blue);
-    position: absolute;
-    top: -8rem;
-    left: -2rem;
-    opacity: 0.6;
-    filter: blur(2px) drop-shadow(0 0 30px var(--accent-blue));
-    line-height: 1;
-    font-family: serif;
-}
-
-.quote-area p {
-    font-size: 2rem;
-    font-weight: 800;
-    line-height: 1.2;
-    position: relative;
-    z-index: 2;
-}
-
-.quote-area strong {
-    color: #FFF;
-    font-weight: 900;
-}
-
-.benefit-title {
-    font-size: 2.5rem;
-    font-weight: 950;
-    margin-bottom: 40px;
-    text-transform: lowercase;
-}
-
-.benefit-title .blue {
-    color: var(--accent-blue);
-    text-transform: lowercase;
-}
-
-.benefit-list {
-    display: grid;
-    gap: 1rem;
-}
-
-.benefit-item {
-    background: #080808;
-    padding: 2rem;
-    border-radius: 12px;
-    border-left: 4px solid var(--accent-blue);
-}
-
-.benefit-item h4 {
-    color: var(--accent-blue);
-    font-weight: 900;
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-}
-
-.benefit-item p {
-    color: var(--text-dim);
-    font-size: 0.95rem;
-}
-
-/* Modules & Offer */
-.modules {
-    padding: 100px 0;
-    text-align: center;
-}
-
-.modules-intro img {
-    width: 100%;
-    max-width: 1000px;
-    border-radius: 20px;
-    filter: drop-shadow(0 20px 60px rgba(0, 86, 255, 0.2));
-}
-
-/* Why Us Section (Novo) */
-.why-us {
-    padding: 120px 0;
-}
-
-.why-layout {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 60px;
-    align-items: center;
-}
-
-.why-title {
-    font-size: 2.2rem;
-    font-weight: 950;
-    margin-bottom: 1.5rem;
-    line-height: 1.1;
-}
-
-.why-title .blue {
-    color: var(--accent-blue);
-}
-
-.why-subtitle {
-    color: var(--text-dim);
-    margin-bottom: 40px;
-    font-weight: 600;
-}
-
-.why-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2.5rem;
-}
-
-.why-item-small {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.why-item-small i {
-    font-size: 1.8rem;
-    color: var(--accent-blue);
-    background: rgba(0, 86, 255, 0.1);
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 8px;
-}
-
-.why-item-small h4 {
-    font-size: 0.9rem;
-    font-weight: 900;
-    letter-spacing: 1px;
-    color: #FFF;
-}
-
-.why-item-small p {
-    font-size: 0.85rem;
-    color: var(--text-dim);
-    line-height: 1.4;
-}
-
-.why-image img {
-    width: 110%;
-    height: auto;
-    border-radius: 20px;
-    filter: drop-shadow(0 20px 80px rgba(0, 86, 255, 0.2));
-}
-
-.offer {
-    padding: 100px 0;
-    text-align: center;
-}
-
-.offer-container-relative {
-    position: relative;
-    display: inline-block;
-    width: 100%;
-    max-width: 1100px;
-}
-
-.full-offer-img {
-    width: 100%;
-    height: auto;
-    border-radius: 20px;
-    filter: drop-shadow(0 20px 100px rgba(0, 86, 255, 0.35));
-}
-
-.offer-hotspot {
-    position: absolute;
-    left: 1%;
-    top: 43%;
-    transform: none;
-    background: #0056FF;
-    color: white;
-    text-decoration: none;
-    padding: 1rem 2.5rem;
-    font-size: 1.05rem;
-    font-weight: 950;
-    letter-spacing: 1.5px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    cursor: pointer;
-    transition: all 0.3s;
-    z-index: 20;
-    box-shadow: 0 0 25px rgba(0, 86, 255, 0.5);
-    text-transform: uppercase;
-    white-space: nowrap;
-}
-
-.offer-hotspot:hover {
-    transform: scale(1.03);
-    box-shadow: 0 0 40px rgba(0, 86, 255, 0.7);
-}
-
-/* Footer Moderno */
-footer {
-    padding: 6rem 0;
-    border-top: 1px solid #111;
-    background: #000;
-}
-
-.footer-layout {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 2rem;
-}
-
-.whatsapp-support {
-    background: #000;
-    color: #FFF;
-    text-decoration: none;
-    font-weight: 900;
-    padding: 1rem 2rem;
-    border-radius: 50px;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    border: 1px solid #222;
-    transition: all 0.3s;
-}
-
-.whatsapp-support i {
-    color: #25D366;
-    font-size: 1.4rem;
-}
-
-.whatsapp-support:hover {
-    border-color: var(--accent-blue);
-    transform: scale(1.05);
-}
-
-@media (max-width: 968px) {
-
-    .benefits-layout,
-    .why-layout {
-        grid-template-columns: 1fr;
-        gap: 60px;
-        text-align: center;
-    }
-
-    .quote-mark {
-        font-size: 8rem;
-        top: -4rem;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .quote-area {
-        padding-left: 0;
-    }
-
-    .why-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .why-image img {
-        width: 100%;
-    }
-}
-
-/* =============================================
-   ANIMAÇÕES DE SCROLL (Fade-in)
-   ============================================= */
-.fade-in {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-}
-.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-.fade-in-left {
-    opacity: 0;
-    transform: translateX(-50px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-}
-.fade-in-left.visible {
-    opacity: 1;
-    transform: translateX(0);
-}
-.fade-in-right {
-    opacity: 0;
-    transform: translateX(50px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-}
-.fade-in-right.visible {
-    opacity: 1;
-    transform: translateX(0);
-}
-.fade-in-delay-1 { transition-delay: 0.1s; }
-.fade-in-delay-2 { transition-delay: 0.2s; }
-.fade-in-delay-3 { transition-delay: 0.3s; }
-.fade-in-delay-4 { transition-delay: 0.4s; }
-
-/* =============================================
-   HOVER E MICRO-ANIMAÇÕES
-   ============================================= */
-.cta-nav:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(0, 86, 255, 0.5);
-}
-
-.problem-card {
-    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-}
-.problem-card:hover {
-    transform: translateY(-8px);
-    border-color: var(--accent-blue);
-    box-shadow: 0 10px 40px rgba(0, 86, 255, 0.15);
-}
-
-.benefit-item {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.benefit-item:hover {
-    transform: translateX(6px);
-    box-shadow: -4px 0 20px rgba(0, 86, 255, 0.2);
-}
-
-.why-item-small {
-    transition: transform 0.3s ease;
-}
-.why-item-small:hover {
-    transform: translateY(-4px);
-}
-.why-item-small i {
-    transition: background 0.3s ease, box-shadow 0.3s ease;
-}
-.why-item-small:hover i {
-    background: rgba(0, 86, 255, 0.25);
-    box-shadow: 0 0 15px rgba(0, 86, 255, 0.3);
-}
-
-/* Pulsação nos botões CTA */
-@keyframes pulse-glow {
-    0%, 100% { box-shadow: 0 0 25px rgba(0, 86, 255, 0.5); }
-    50%       { box-shadow: 0 0 45px rgba(0, 86, 255, 0.85); }
-}
-.hero-hotspot, .offer-hotspot {
-    animation: pulse-glow 2.5s ease-in-out infinite;
-}
-
-/* Ticker texto visível */
-.ticker span {
-    color: #555;
-}
-
-/* =============================================
-   RESPONSIVIDADE MOBILE
-   ============================================= */
-@media (max-width: 768px) {
-
-    /* Navbar */
-    .navbar {
-        position: relative;
-        left: 0;
-        transform: none;
-        padding: 1rem 1.5rem;
-        background: #000;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-    }
-    .logo { font-size: 1rem; }
-    .cta-nav { font-size: 0.75rem; padding: 0.6rem 1rem; }
-
-    /* Hero */
-    .hero {
-        position: relative;
-        height: 56.25vw; /* Mantém a proporção 16:9 da imagem para exibi-la toda */
-        background-size: 100% 100%; /* Force perfectly map the image */
-        background-position: center top;
-        display: block; /* remove o flex */
-        padding-bottom: 0;
-        min-height: auto;
-        border-bottom: 2px solid var(--accent-blue);
-    }
-    .hero-hotspot {
-        position: absolute;
-        left: 20.8%; /* Math precision offset */
-        top: 54.8%; /* Math precision offset */
-        width: 22.8%; /* Fixed width to exactly match the baked button */
-        max-width: none;
-        height: 8.5%; /* Precision calculated height (approx 24px of 281px) */
-        font-size: 1.3vw; /* Perfect match for 6.5px at 500width */
-        padding: 0; 
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        letter-spacing: 0;
-        border-radius: 2vw; /* Match baked border radius */
-        transform: none;
-    }
-
-    /* Sections padding */
-    .problems, .benefits, .why-us { padding: 80px 0; }
-    .modules, .offer { padding: 60px 0; }
-
-    .section-title { font-size: 1.8rem; letter-spacing: -1px; margin-bottom: 50px; }
-
-    /* Problems */
-    .problem-grid { grid-template-columns: 1fr; }
-    .problem-card { padding: 40px 28px; }
-
-    /* Highlight text */
-    .highlight-text { font-size: 1.1rem; }
-
-    /* Benefits */
-    .benefits-layout { grid-template-columns: 1fr; gap: 40px; text-align: center; }
-    .quote-area p { font-size: 1.5rem; }
-    .benefit-title { font-size: 1.8rem; }
-
-    /* Why Us */
-    .why-layout { grid-template-columns: 1fr; gap: 40px; }
-    .why-title { font-size: 1.6rem; }
-    .why-grid { grid-template-columns: 1fr; gap: 1.5rem; }
-    .why-image img { width: 100%; }
-
-    /* Offer */
-    .offer-container-relative {
-        display: block; /* revert flex */
-        padding-bottom: 0;
-        container-type: inline-size;
-    }
-    .offer-hotspot {
-        position: absolute;
-        left: 0.8%; /* Adjusted to be perfectly aligned with the card's edge */
-        top: 41.5%;
-        width: 32%; /* Matches the card column */
-        max-width: none;
-        margin-top: 0;
-        font-size: 1.7cqw; /* Slightly tweaked text down to fit beautifully */
-        padding: 1.2cqw 1cqw;
-        letter-spacing: 0.05cqw;
-        border-radius: 1.2cqw;
-        white-space: normal; /* Allow wrap if needed on very small screens */
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        line-height: 1.2;
-    }
-
-    /* Footer */
-    footer { padding: 3rem 0; }
-    .footer-layout { flex-direction: column; text-align: center; gap: 1.5rem; }
-    .logo { font-size: 1.1rem; }
-}
-
-@media (max-width: 480px) {
-    .section-title { font-size: 1.5rem; }
-    .problem-card { padding: 30px 20px; }
-    .quote-area p { font-size: 1.2rem; }
-    .benefit-title { font-size: 1.4rem; }
-    .why-title { font-size: 1.3rem; }
-}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pregue Sem Medo | Método Ousadia</title>
+    <!-- Fontes e Ícones -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;850;950&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">PREGUE<span>SEM MEDO!</span></div>
+        <a href="https://pay.kiwify.com.br/49OFYTD" class="cta-nav">QUERO ME INSCREVER</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <a href="https://pay.kiwify.com.br/49OFYTD" class="hero-hotspot">
+            <span class="arrow">↘</span> QUERO ME INSCREVER
+        </a>
+    </header>
+
+    <!-- Ticker Section -->
+    <div class="ticker-wrap">
+        <div class="ticker">
+            <span>• DO NERVOSISMO À OUSADIA • DO NERVOSISMO À OUSADIA • DO NERVOSISMO À OUSADIA • DO NERVOSISMO À
+                OUSADIA • DO NERVOSISMO À OUSADIA •</span>
+        </div>
+    </div>
+
+    <!-- Problems Section -->
+    <section class="problems">
+        <div class="container">
+            <h2 class="section-title fade-in">VOCÊ SE IDENTIFICA COM ISSO?</h2>
+            <div class="problem-grid">
+                <div class="problem-card fade-in fade-in-delay-1">
+                    <div class="card-icon-box">
+                        <i class="fas fa-user-slash"></i>
+                    </div>
+                    <h3>NERVOSISMO<br>QUE TRAVA:</h3>
+                    <p><em>O frio na barriga que paralisa.</em></p>
+                </div>
+                <div class="problem-card fade-in fade-in-delay-2">
+                    <div class="card-icon-box">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>BRANCO<br>NA MENTE:</h3>
+                    <p><em>A mensagem desaparece na hora da pregação.</em></p>
+                </div>
+                <div class="problem-card fade-in fade-in-delay-3">
+                    <div class="card-icon-box">
+                        <i class="fas fa-eye-slash"></i>
+                    </div>
+                    <h3>MEDO DO<br>JULGAMENTO:</h3>
+                    <p><em>Preocupação constante com a opinião alheia.</em></p>
+                </div>
+                <div class="problem-card fade-in fade-in-delay-4">
+                    <div class="card-icon-box">
+                        <i class="fas fa-balance-scale-left"></i>
+                    </div>
+                    <h3>COMPARAÇÃO<br>COM OUTROS:</h3>
+                    <p><em>Sentir-se inferior a pregadores mais experientes.</em></p>
+                </div>
+            </div>
+            <p class="highlight-text fade-in"><strong>MILHARES DE PESSOAS CHAMADAS POR DEUS</strong> ENFRENTAM OS MESMOS DESAFIOS <strong>TODOS OS DIAS!</strong></p>
+        </div>
+    </section>
+
+    <!-- Benefits Section (O que você vai conquistar) -->
+    <section class="benefits">
+        <div class="container benefits-layout">
+            <div class="quote-area fade-in-left">
+                <div class="quote-mark">"</div>
+                <p>"Pregar com impacto <strong>não é um dom exclusivo.</strong> É uma habilidade que nasce da prática,
+                    alinhada ao <strong>Espírito Santo.</strong>"</p>
+            </div>
+            <div class="conquer-area fade-in-right">
+                <h2 class="benefit-title">o que você vai <span class="blue">conquistar?</span></h2>
+                <div class="benefit-list">
+                    <div class="benefit-item fade-in fade-in-delay-1">
+                        <h4>Vencer o medo e falar com confiança.</h4>
+                        <p>Aprenda técnicas que libertam sua voz e destravam sua mente.</p>
+                    </div>
+                    <div class="benefit-item fade-in fade-in-delay-2">
+                        <h4>Comunicar com clareza.</h4>
+                        <p>Organize mensagens poderosas e inspiradoras.</p>
+                    </div>
+                    <div class="benefit-item fade-in fade-in-delay-3">
+                        <h4>Ser voz respeitada e influente no Reino.</h4>
+                        <p>Transmita autoridade espiritual e conquiste respeito.</p>
+                    </div>
+                    <div class="benefit-item fade-in fade-in-delay-4">
+                        <h4>Pregar com presença e segurança.</h4>
+                        <p>Domine a fala em público e nas redes com naturalidade.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modules Section -->
+    <section class="modules">
+        <div class="container">
+            <div class="modules-intro fade-in">
+                <img src="img/módulostext_p4.png" alt="Módulos" class="img-responsive">
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us Section (Por que o PSM?) -->
+    <section class="why-us">
+        <div class="container why-layout">
+            <div class="why-content fade-in-left">
+                <h2 class="why-title">MAS POR QUE O <span class="blue">PREGUE SEM MEDO</span> É O SEU CAMINHO?</h2>
+                <p class="why-subtitle">Uma metodologia única que combina técnicas de comunicação com princípios
+                    espirituais.</p>
+                <div class="why-grid">
+                    <div class="why-item-small fade-in fade-in-delay-1">
+                        <i class="fas fa-volume-mute"></i>
+                        <div>
+                            <h4>QUEBRE O SILÊNCIO E O MEDO</h4>
+                            <p>Supere bloqueios com uma metodologia exclusiva e prática.</p>
+                        </div>
+                    </div>
+                    <div class="why-item-small fade-in fade-in-delay-2">
+                        <i class="fas fa-comment-dots"></i>
+                        <div>
+                            <h4>ESTRUTURE MENSAGENS IMPACTANTES</h4>
+                            <p>Toque corações e transforme vidas com clareza e propósito.</p>
+                        </div>
+                    </div>
+                    <div class="why-item-small fade-in fade-in-delay-3">
+                        <i class="fas fa-bible"></i>
+                        <div>
+                            <h4>LIBERTE A PALAVRA COM PODER</h4>
+                            <p>Transmita a mensagem de Deus com impacto e autenticidade.</p>
+                        </div>
+                    </div>
+                    <div class="why-item-small fade-in fade-in-delay-4">
+                        <i class="fas fa-fire"></i>
+                        <div>
+                            <h4>DESBLOQUEIE SUA AUTORIDADE ESPIRITUAL</h4>
+                            <p>Ministre com poder, confiança e unção.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="why-image fade-in-right">
+                <img src="img/samuel.png" alt="Samuel Galdino Pregando">
+            </div>
+        </div>
+    </section>
+
+    <!-- Offer Section -->
+    <section class="offer" id="oferta">
+        <div class="container">
+            <div class="offer-container-relative fade-in">
+                <img src="img/oferta_especial.png" alt="Oferta Especial" class="full-offer-img">
+                <a href="https://pay.kiwify.com.br/49OFYTD" class="offer-hotspot">QUERO MINHA VAGA AGORA &#x2197;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-layout fade-in">
+            <div class="logo">PREGUE<span>SEM MEDO!</span></div>
+            <p>2025 © Todos os direitos reservados - Pregue Sem Medo</p>
+            <a href="https://wa.me/SEUNUMERO" class="whatsapp-support">
+                <i class="fab fa-whatsapp"></i> SUPORTE NO WHATSAPP
+            </a>
+        </div>
+    </footer>
+
+    <!-- Intersection Observer: ativa animações ao scrollar -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+
+</body>
+
+</html>
