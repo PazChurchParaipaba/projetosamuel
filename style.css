@@ -329,7 +329,7 @@ body {
 }
 
 .modules-intro img {
-    width: 100%;
+    width: 107%;
     max-width: 1000px;
     border-radius: 20px;
     filter: drop-shadow(0 20px 60px rgba(0, 86, 255, 0.2));
@@ -670,36 +670,40 @@ footer {
         padding: 0.6rem 1rem;
     }
 
-    /* Hero */
+    /* Hero - mantém proporção exata da imagem do layout */
     .hero {
-        position: relative;
-        height: 76vw;
-        /* Zoom 175%: mais recortado, foca na área principal */
-        background-size: 175% auto;
-        background-position: center 10%;
+        height: 0;
+        padding-bottom: 56.25%;
+        /* Proporção 16:9 exata da imagem layout_full.png */
+        background-size: 100% 100%;
+        background-position: center top;
         display: block;
-        padding-bottom: 0;
+        position: relative;
         min-height: auto;
         border-bottom: 2px solid var(--accent-blue);
-        overflow: hidden;
+        overflow: visible;
     }
 
     .hero-hotspot {
         position: absolute;
-        left: 6%;
-        top: 61.2%;
-        width: 32.7%;
-        max-width: none;
-        height: 8.5%;
-        font-size: 1.5vw;
+        left: 8%;
+        top: 57%;
+        width: 33%;
+        height: 9%;
+        font-size: clamp(5px, 1.5vw, 12px);
         padding: 0;
         display: flex;
         align-items: center;
         justify-content: center;
         letter-spacing: 0;
-        border-radius: 2vw;
+        border-radius: 1.5vw;
         transform: none;
         white-space: nowrap;
+        gap: 0.3rem;
+    }
+
+    .hero-hotspot .arrow {
+        display: none;
     }
 
     /* Sections padding */
@@ -712,14 +716,6 @@ footer {
     .modules,
     .offer {
         padding: 60px 0;
-    }
-
-    .modules-intro img {
-        width: 105%;
-        /* Levemente maior que o container */
-        margin-left: -2.5%;
-        /* Centraliza o excesso */
-        max-width: none;
     }
 
     .offer .container {
@@ -807,8 +803,8 @@ footer {
 
     .offer-hotspot {
         position: absolute;
-        left: 2.6%;
-        top: 42.2%;
+        left: 3%;
+        top: 41.5%;
         width: 36.8%;
         /* 32% * 1.15 */
         max-width: none;
