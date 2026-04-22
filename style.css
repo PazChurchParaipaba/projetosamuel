@@ -878,6 +878,12 @@ footer {
 
     .why-grid {
         grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .why-item-small {
+        align-items: center;
+        text-align: center;
     }
 
     .why-image img {
