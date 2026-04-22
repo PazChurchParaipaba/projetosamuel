@@ -55,6 +55,25 @@ body {
     color: var(--accent-blue);
 }
 
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: var(--text-white);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--accent-blue);
+}
+
 .cta-nav {
     background: var(--accent-blue);
     color: #FFF;
@@ -524,6 +543,97 @@ footer {
     }
 }
 
+/* About Section */
+.about-samuel {
+    padding: 120px 0;
+    background: linear-gradient(to bottom, #050505, #080808);
+}
+
+.about-layout {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.about-image .image-wrapper {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 86, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.about-samuel:hover .about-image img {
+    transform: scale(1.05);
+}
+
+.image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 86, 255, 0.2), transparent 60%);
+    pointer-events: none;
+}
+
+.about-title {
+    font-size: 3.2rem;
+    font-weight: 950;
+    margin-bottom: 2.5rem;
+    line-height: 1.1;
+    letter-spacing: -2px;
+}
+
+.about-title .blue {
+    color: var(--accent-blue);
+}
+
+.about-text p {
+    font-size: 1.15rem;
+    color: var(--text-dim);
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+.highlight-quote {
+    font-size: 1.4rem !important;
+    color: #FFF !important;
+    font-weight: 800;
+    font-style: italic;
+    border-left: 4px solid var(--accent-blue);
+    padding-left: 1.5rem;
+    margin-top: 3rem;
+    position: relative;
+}
+
+@media (max-width: 968px) {
+    .about-layout {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        text-align: center;
+    }
+
+    .about-title {
+        font-size: 2.4rem;
+    }
+
+    .highlight-quote {
+        text-align: left;
+        font-size: 1.2rem !important;
+    }
+
+    .about-image {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}
+
 /* =============================================
    ANIMAÇÕES DE SCROLL (Fade-in)
    ============================================= */
@@ -661,6 +771,11 @@ footer {
         width: 100%;
     }
 
+    .nav-links {
+        display: none;
+        /* Esconde links extras no mobile para manter o layout original */
+    }
+
     .logo {
         font-size: 1rem;
     }
@@ -673,9 +788,9 @@ footer {
     /* Hero - mantém proporção exata da imagem do layout */
     .hero {
         height: 0;
-        padding-bottom: 57.25%;
+        padding-bottom: 70.25%;
         /* Proporção 16:9 exata da imagem layout_full.png */
-        background-size: 150% 100%;
+        background-size: 185% 100%;
         background-position: center top;
         display: block;
         position: relative;
@@ -686,10 +801,10 @@ footer {
 
     .hero-hotspot {
         position: absolute;
-        left: 8%;
+        left: 4%;
         top: 57%;
-        width: 33%;
-        height: 9%;
+        width: 40%;
+        height: 12%;
         font-size: clamp(5px, 1.5vw, 12px);
         padding: 0;
         display: flex;
@@ -750,35 +865,44 @@ footer {
         text-align: center;
     }
 
-    .quote-area p {
-        font-size: 1.5rem;
+    .quote-mark {
+        font-size: 8rem;
+        top: -4rem;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
-    .benefit-title {
-        font-size: 1.8rem;
-    }
-
-    /* Why Us */
-    .why-layout {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    .why-title {
-        font-size: 1.6rem;
+    .quote-area {
+        padding-left: 0;
     }
 
     .why-grid {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-
-    .why-item-small {
-        align-items: center;
     }
 
     .why-image img {
         width: 100%;
+    }
+
+    /* About Section Mobile */
+    .about-layout {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        text-align: center;
+    }
+
+    .about-title {
+        font-size: 2rem;
+    }
+
+    .highlight-quote {
+        text-align: left;
+        font-size: 1.2rem !important;
+    }
+
+    .about-image {
+        max-width: 500px;
+        margin: 0 auto;
     }
 
     /* Offer */
@@ -835,27 +959,5 @@ footer {
 
     .logo {
         font-size: 1.1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .section-title {
-        font-size: 1.5rem;
-    }
-
-    .problem-card {
-        padding: 30px 20px;
-    }
-
-    .quote-area p {
-        font-size: 1.2rem;
-    }
-
-    .benefit-title {
-        font-size: 1.4rem;
-    }
-
-    .why-title {
-        font-size: 1.3rem;
     }
 }
